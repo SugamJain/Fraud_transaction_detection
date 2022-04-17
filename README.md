@@ -1,10 +1,12 @@
 # Fraud_transaction_detection
 
 Important Aspects of the model
+
 Task 1: Data cleaning including missing values, outliers and multi-collinearity:
 In the given dataset, there were no missing values.
 I was not able to show the outlier detection because of RAM issues. I tried to display outliers using the boxplots and Z-score value. The outliers could have been removed using Quantile based flooring and capping or Mean/Median imputation.
 Heatmaps are used to display the corelations among features. Features with considerable correlation values are handeled by computing a different information from them as shown above.
+
 Task 2: Describe your fraud detection model in elaboration.
 -> After cleaning the data and performing exploratory data analysis on the it, the produced dataset is used in training of the machine learning model.
 
@@ -35,15 +37,20 @@ Initialise the tree with only one leaf. compute the similarity using the formula
 Learning is done using the equation 𝑁𝑒𝑤𝑉𝑎𝑙𝑢𝑒=𝑜𝑙𝑑𝑉𝑎𝑙𝑢𝑒+𝜂∗𝑝𝑟𝑒𝑑𝑖𝑐𝑡𝑖𝑜𝑛 where 𝜂 is the learning rate.
 
 Task 3: How did you select variables to be included in the model?
+
 The list variables or features are - [step,type,amount,nameOrig,oldbalanceOrg,newbalanceOrig,nameDest,oldbalanceDest,newbalanceDest,isFraud,isFlaggedFraud].
 Out of these features, 'step', 'nameOrig', and 'nameDest' are the features which have no role to play in prediction a trasaction being fraud or not. This is because these are just the unique string values, which can be ignored.
 The main role for classifying a prediction as fraud or not are played by the difference between the original and new_balance amount in the accounts of sender and receiver, further depending upon the 'type of transaction'. Therefore, the features considered for classification tasks are oldbalanceOrg, newbalanceOrig, oldbalanceDest, newbalanceDest and type.
 'isFraud' is considered as the column of labels in the supervised learning model.
+
 Task 4: Demonstrate the performance of the model by using best set of tools
 The perfomance metrice I have used over here is accuracy. accuracy is the measurement used to determine which model is best at identifying relationships and patterns between variables in a dataset based on the input, or training, data.
 I preffered to use accuracy over other perfomance measuring metrices like precision, F1 Score etc. because accuracy tells the measure of correct classification, which is utmost necessary to know, so that a Fraud transaction can be detected effectively.
 At any cost, the company can not entertain the mistake of a actual fraud transaction being classified as 'not fraud' and a 'not fraud' transaction being classified as 'fraud'. If any such mistake happens, it would adversely affect the reputation of the bank or company.
+
+
 Task 5: What are the key factors that predict fraudulent customer?
+
 Some of the important factors that play a majour role in predicting a fradulant customer are:
 
 Customer's identity (email addresses, credit card numbers, etc.)
